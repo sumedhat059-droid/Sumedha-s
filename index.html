@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumedha's Profile</title>
+    <title>Sumedha's Upload Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            /* මෙතැනින් පසුබිම් වර්ණය (Dark Blue Gradient) පාලනය වේ */
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(135deg, #1e1e2f, #2d3436);
             color: white;
             font-family: 'Segoe UI', sans-serif;
             display: flex;
@@ -16,44 +16,72 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            text-align: center;
         }
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 40px;
-            border-radius: 25px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
-        img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid #00d2ff;
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px #00d2ff;
+        h1 { color: #00d2ff; }
+        
+        /* Upload Button එකේ හැඩය */
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-top: 20px;
         }
-        h1 {
-            margin: 10px 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
+        .btn {
+            border: 2px dashed #00d2ff;
             color: #00d2ff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background-color: transparent;
+            padding: 20px 40px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
-        p {
-            font-size: 1.2em;
-            color: #bdc3c7;
+        .btn:hover {
+            background: rgba(0, 210, 255, 0.1);
+            transform: scale(1.05);
         }
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        i { font-size: 40px; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <img src="Sigma-Anime-DP-hd.jpg" alt="Profile Picture">
-        <h1>W. Sumedha</h1>
-        <p>මගේ නිල වෙබ් අඩවියට සාදරයෙන් පිළිගනිමි!</p>
+        <h1>මගේ ස්ටෝරේජ් එක</h1>
+        <p>පින්තූර හෝ වීඩියෝ තෝරන්න</p>
+
+        <div class="upload-btn-wrapper">
+            <button class="btn">
+                <i class="fas fa-plus-circle"></i> තෝරන්න (Select)
+            </button>
+            <input type="file" name="myfile" accept="image/*,video/*" onchange="showSuccess()"/>
+        </div>
+        
+        <p id="msg" style="margin-top: 20px; color: #00ff88;"></p>
     </div>
+
+    <script>
+        function showSuccess() {
+            document.getElementById('msg').innerHTML = "ගොනුව සාර්ථකව තෝරාගත්තා! ✅";
+        }
+    </script>
+
 </body>
 </html>
 
