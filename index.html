@@ -3,85 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumedha's Upload Site</title>
+    <title>Sumedha's Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            background: linear-gradient(135deg, #1e1e2f, #2d3436);
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
+        body { background: #121212; color: white; font-family: sans-serif; margin: 0; padding-bottom: 80px; }
+        .header { padding: 20px; background: #1e1e1e; border-bottom: 1px solid #333; text-align: center; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 15px; }
+        .post { background: #1e1e1e; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
+        img { width: 100%; display: block; }
+        .caption { padding: 10px; font-size: 14px; color: #bbb; }
+        .floating-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #00d2ff; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 30px; color: white;
+            box-shadow: 0 4px 15px rgba(0,210,255,0.4); text-decoration: none;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        }
-        h1 { color: #00d2ff; }
-        
-        /* Upload Button එකේ හැඩය */
-        .upload-btn-wrapper {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .btn {
-            border: 2px dashed #00d2ff;
-            color: #00d2ff;
-            background-color: transparent;
-            padding: 20px 40px;
-            border-radius: 15px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: rgba(0, 210, 255, 0.1);
-            transform: scale(1.05);
-        }
-        .upload-btn-wrapper input[type=file] {
-            font-size: 100px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-        i { font-size: 40px; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>මගේ ස්ටෝරේජ් එක</h1>
-        <p>පින්තූර හෝ වීඩියෝ තෝරන්න</p>
-
-        <div class="upload-btn-wrapper">
-            <button class="btn">
-                <i class="fas fa-plus-circle"></i> තෝරන්න (Select)
-            </button>
-            <input type="file" name="myfile" accept="image/*,video/*" onchange="showSuccess()"/>
+    <div class="header"><h2>W. Sumedha Gallery</h2></div>
+    <div class="gallery">
+        <div class="post">
+            <img src="Sigma-Anime-DP-hd.jpg">
+            <div class="caption">පළමු පින්තූරය</div>
         </div>
-        
-        <p id="msg" style="margin-top: 20px; color: #00ff88;"></p>
     </div>
-
-    <script>
-        function showSuccess() {
-            document.getElementById('msg').innerHTML = "ගොනුව සාර්ථකව තෝරාගත්තා! ✅";
-        }
-    </script>
-
+    <a href="https://github.com/sumedhat059-droid/Sumedha-s/upload/main" class="floating-btn">
+        <i class="fas fa-plus"></i>
+    </a>
 </body>
 </html>
-
